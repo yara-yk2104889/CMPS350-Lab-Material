@@ -3,21 +3,16 @@
     box-sizing: border-box;
 }
 
-ul {
-    /* background-color: antiquewhite; */
-    list-style-type: none;
-    height: 200px;
-    width: 200px;
-    padding: 40px;
-    margin: 40px;
 
-    border: 2px solid hsl(0, 89%, 44%);
-    color: blue;
-    box-sizing: content-box;
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    margin: 1rem;
+    display: inline-block;
+}
 
-    /* style the text */
-
-    font-family: Georgia, 'Times New Roman', Times, serif;
-    font-size: 1.5em;
-
+.special-box {
+    background-color: blue;
+    margin: 1rem;
 }
