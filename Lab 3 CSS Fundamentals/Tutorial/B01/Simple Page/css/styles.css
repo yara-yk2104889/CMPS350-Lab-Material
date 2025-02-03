@@ -1,9 +1,17 @@
-h2 {
-    background-color: red;
-    color: white;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
 
-body>ul li {
+.box {
+    width: 100px;
+    height: 100px;
     background-color: aqua;
-    list-style: disc;
+    margin: 1rem;
+    display: inline-block;
+}
+
+.box:hover {
+    background-color: beige;
 }
