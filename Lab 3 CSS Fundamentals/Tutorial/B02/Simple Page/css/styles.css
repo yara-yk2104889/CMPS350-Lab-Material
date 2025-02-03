@@ -12,7 +12,15 @@
     display: inline-block;
 }
 
-.special-box {
-    background-color: blue;
-    margin: 1rem;
+div:hover {
+    background-color: rgba(0, 0, 255, 0.378);
 }
+
+/* .special-box:nth-child(odd) {
+    background-color: green;
+} */
+/* color the old children */
+
+/* tr:nth-child(2n+1) {
+    background-color: green;
+} */
