@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
 </head>
 
 <body>
@@ -12,17 +13,54 @@
 
     <form action="">
 
-        <div class="form-group">
-            <label for="">Full Name</label>
-            <input type="text" name="name" id="name" required>
+        <fieldset>
+            <legend>
+                <h2>Personal Info</h2>
+            </legend>
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" name="name" id="name" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email </label>
+                <input type="email" name="email" id="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="age">Age</label>
+                <input type="number" name="age" id="age" min="10" max="100" required>
+            </div>
+        </fieldset>
+
+        <div>
+            <label for="">Date of Birth</label>
+            <input type="date" name="dob" id="dob">
+        </div>
+        <div>
+            <label for="">Nationality</label>
+            <select name="nationality" id="">
+                <optgroup label="Middle East">
+                    <option value="qatar">Qatar</option>
+                    <option value="uae">UAE</option>
+                    <option value="kingdom of saudi arabia">Saudi Arabia</option>
+                </optgroup>
+                <optgroup label="South Asia">
+                    <option value="india">India</option>
+                    <option value="pak">Pakistan</option>
+                    <option value="bang">Bangladesh</option>
+                </optgroup>
+            </select>
         </div>
 
-        <div class="form-group">
-            <label for="">Age</label>
-            <input type="number" name="age" id="age" min="10" max="100">
+        <div>
+            <label for="gender">Gender</label>
+            <label for="">Male</label>
+            <input type="radio" name="gender" id="male" value="male">
+            <label for="">Female</label>
+            <input type="radio" name="gender" id="female" value="female">
         </div>
-
         <input type="submit" value="Submit">
+        <input type="reset" value="Reset">
     </form>
 </body>
 
