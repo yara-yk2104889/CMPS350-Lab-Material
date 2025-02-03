@@ -1,0 +1,23 @@
+* {
+    border: 1px solid red;
+    box-sizing: border-box;
+}
+
+ul {
+    /* background-color: antiquewhite; */
+    list-style-type: none;
+    height: 200px;
+    width: 200px;
+    padding: 40px;
+    margin: 40px;
+
+    border: 2px solid hsl(0, 89%, 44%);
+    color: blue;
+    box-sizing: content-box;
+
+    /* style the text */
+
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 1.5em;
+
+}
