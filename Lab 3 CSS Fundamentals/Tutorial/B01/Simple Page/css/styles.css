@@ -5,20 +5,49 @@
 }
 
 .box {
-    width: 100px;
+    width: 80px;
     height: 100px;
     background-color: aqua;
-    margin: 1rem;
-    display: inline-block;
+    /* margin: 1rem; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     /* background-image: url("https://static5.gunfire.com/eng_pl_SA-H07-ONE-TM-Carbine-Replica-1152216912_2.webp"); */
+
+    flex-grow: 1;
 }
+
+.boxes {
+    display: flex;
+    border: 2px solid red;
+    height: 300px;
+    /* width: 500px; */
+
+    /* flex-direction: column; */
+
+    /* space /margin */
+
+
+    /* left and right on main */
+    justify-content: space-evenly;
+    gap: 1rem;
+
+    /* move through cross axis */
+    align-items: center;
+    flex-wrap: wrap-reverse;
+}
+
+/* .box1 {
+    align-self: start;
+} */
 
 .box:hover {
     background-color: rgba(140, 70, 98, 0.51);
     /* width: 200px; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
+
+/* ul {
+    display: flex;
+} */
 
 .fa.fa-car {
     color: red;
