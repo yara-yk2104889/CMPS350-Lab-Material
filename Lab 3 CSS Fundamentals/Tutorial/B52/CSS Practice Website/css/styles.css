@@ -1,0 +1,21 @@
+section {
+    /* background-color: red; */
+    /* color: white; */
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    /* font-size: 32px; */
+    font-size: 1rem;
+    /* font-size: 2em; */
+    /* font-weight: 600; */
+
+
+
+}
+
+p {
+    text-decoration: underline;
+    
+}
+
+ul {
+    list-style: lower-roman;
+}
