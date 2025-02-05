@@ -1,21 +1,98 @@
+/* selector and their priority */
+/* 1. #id 2. .class 3. element */
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --primary-color: teal;
+    --secondary-color: lightgray;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    width: 90%;
+    margin: auto;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 3rem;
+
+
+}
+
+nav {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    padding: 0.5rem;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: var(--secondary-color);
+}
+
 section {
-    /* background-color: red; */
-    /* color: white; */
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    /* font-size: 32px; */
-    font-size: 1rem;
-    /* font-size: 2em; */
-    /* font-weight: 600; */
+    margin-top: 1rem;
+}
 
-
-
+section h2 {
+    background-color: var(--primary-color);
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 5px;
+    margin-bottom: 0.25rem;
 }
 
 p {
-    text-decoration: underline;
-    
+    margin: 1rem 0;
 }
 
-ul {
-    list-style: lower-roman;
+.box {
+    width: 100px;
+    height: 100px;
+    margin: 1rem;
+    background-color: red;
+    /* display: inline-block; */
+}
+
+article {
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--secondary-color);
+    transition: ease-in 0.3s;
+    /* add a shadow */
+    /* box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); */
+}
+
+article:hover {
+    scale: 1.1;
+    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+
+}
+
+footer {
+    background-color: var(--primary-color);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
 }
