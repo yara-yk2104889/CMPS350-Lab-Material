@@ -1,0 +1,30 @@
+/* learn how we can detect screen sizes using media query */
+
+/* different break point */
+
+/* my default is small screen */
+
+/* use variables */
+:root {
+    --bg-color: white;
+    --text-color: black;
+    --primary-color: blue;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+}
+
+
+/* big screen */
+@media screen and (min-width: 600px) {}
+
+/*  */
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: black;
+        --text-color: white;
+    }
+
+}
