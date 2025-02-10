@@ -1,0 +1,8 @@
+/* first thing you need to do before styling */
+/* is to reset the default browser styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
