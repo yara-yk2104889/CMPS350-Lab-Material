@@ -86,31 +86,22 @@ footer {
 }
 
 @media screen and (min-width : 400px) {
-    /* body {
-        background-color: blue;
-    } */
 
+    body {
+        background-color: yellow;
+    }
 }
 
 @media screen and (min-width : 600px) {
-    /* body {
+
+    body {
         background-color: green;
-    } */
-
-    .header-nav {
-        display: flex;
-        justify-content: space-between;
-    }
-
-    header h1 {
-        border-right: 1px solid var(--separator-color);
     }
 
     nav ul {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
     }
-
 }
 
 
