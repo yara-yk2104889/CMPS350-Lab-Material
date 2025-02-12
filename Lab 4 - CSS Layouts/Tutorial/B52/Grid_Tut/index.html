@@ -37,30 +37,53 @@
             border: 1px solid black;
             height: 70vh;
             display: grid;
-            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-rows: auto 1fr auto;
             grid-template-columns: 1fr 4fr;
 
             gap: 1%;
 
             grid-template-areas:
-                "yellow blue"
-                "yellow green"
-                "yellow red"
+                "blue blue"
+                "green green"
+                "yellow yellow"
+                "red red"
             ;
         }
 
-        @media screen and  (min-width : 400px) {
-            
+        @media screen and (min-width : 400px) {
+            .container {
+                grid-template-rows: auto 1fr auto;
+                grid-template-columns: 1fr 4fr;
+
+                grid-template-areas:
+                    "blue blue"
+                    "yellow green"
+                    "red red"
+                ;
+            }
+        }
+
+        @media screen and (min-width : 600px) {
+            .container {
+
+
+                grid-template-areas:
+                    "blue yellow"
+                    "green green"
+                    "red red"
+                ;
+            }
         }
     </style>
 </head>
 
 <body>
     <div class="container">
-        <div class="box green">Green</div>
-        <div class="box red">Red</div>
-        <div class="box yellow">Yellow</div>
-        <div class="box blue">Blue</div>
+        <div class="box blue">Header</div>
+        <div class="box yellow"></div>
+        <div class="box green">Main</div>
+        <div class="box red">Footer</div>
+
     </div>
 </body>
 
