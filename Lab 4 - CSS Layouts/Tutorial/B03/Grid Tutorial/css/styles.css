@@ -1,0 +1,73 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bg-color: white;
+    --text-color: black;
+    color-scheme: light;
+}
+
+/* body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+} */
+
+.yellow {
+    background-color: yellow;
+
+}
+
+
+
+.green {
+    background-color: green;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.container {
+    border: 1px solid black;
+    /* height: 50vh; */
+    margin: 1rem;
+
+    display: grid;
+    grid-template-columns: ;
+}
+
+:root:has(#theme:checked) {
+    color-scheme: dark;
+}
+
+/* learn how to detect different screen sizes */
+
+@media screen and (min-width: 400px) {
+    .container {
+        background-color: gray;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        background-color: pink;
+        display: flex;
+    }
+}
+
+@media screen and (prefers-color-scheme: dark) {
+    :root {
+        /* --bg-color: black;
+        --text-color: white; */
+
+        color-scheme: dark;
+    }
+
+}
