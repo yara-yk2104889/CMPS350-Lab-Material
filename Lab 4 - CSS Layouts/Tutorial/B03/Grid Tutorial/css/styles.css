@@ -30,25 +30,33 @@
     /* RAM */
 
     grid-template-rows: auto auto 1fr auto;
+
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
 }
 
 .yellow {
     background-color: yellow;
-
+    grid-area: nav;
 
 }
 
 .green {
     background-color: green;
+    grid-area: header;
 }
 
 .red {
     background-color: red;
-
+    grid-area: main;
 }
 
 .blue {
     background-color: blue;
+    grid-area: footer;
 }
 
 
@@ -60,16 +68,14 @@
         grid-template-columns: 1fr 4fr;
         grid-template-rows: auto 1fr auto;
 
+        grid-template-areas:
+            "header main"
+            "nav main"
+            "footer footer";
+
     }
 
-    .red {
-        grid-column: 2 / 3;
-        grid-row: 1 / 3;
-    }
 
-    .blue {
-        grid-column: 1/span 2;
-    }
 }
 
 @media screen and (min-width: 600px) {
@@ -81,19 +87,13 @@
         background-color: pink;
         grid-template-columns: auto 1fr;
         grid-template-rows: auto 1fr auto;
+
+        grid-template-areas:
+            "header nav"
+            "main main"
+            "footer footer";
     }
 
-    .yellow {
-        grid-column: 2/-1;
-        grid-row: 1/2;
-
-    }
-
-    .red {
-
-        grid-row: 2 / 3;
-        grid-column: 1 / -1;
-    }
 }
 
 @media screen and (prefers-color-scheme: dark) {
