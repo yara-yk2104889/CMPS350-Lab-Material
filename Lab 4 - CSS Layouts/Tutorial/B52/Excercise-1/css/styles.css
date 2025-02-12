@@ -149,7 +149,23 @@ footer {
 
 @media screen and (min-width :600px) {
     .container {
-        background-color: blue;
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas:
+            "header nav"
+            "main main"
+            "footer footer";
+
+        ;
+    }
+
+    nav ul {
+        display: flex;
+    }
+
+    header h1 {
+        border-right: 1px solid var(--separator);
+        padding-right: 1rem;
     }
 }
 
