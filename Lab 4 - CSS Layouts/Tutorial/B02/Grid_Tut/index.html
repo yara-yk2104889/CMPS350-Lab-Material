@@ -5,41 +5,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .green {
+            background-color: green;
+        }
+
+        .red {
+            background-color: red;
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
 </head>
-<style>
-    .header {
-        background-color: red;
-
-    }
-
-    .nav {
-        background-color: blue;
-
-    }
-
-    .main {
-        background-color: green;
-    }
-
-    .footer {
-        background-color: yellow;
-    }
-
-
-    .container {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
-    }
-</style>
 
 <body>
     <div class="container">
-        <div class="box header">Header</div>
-        <div class="box nav">Nav</div>
-        <div class="box main">Main</div>
-
-
-
+        <div class="box green">Green</div>
+        <div class="box red">Red</div>
+        <div class="box yellow">Yellow</div>
     </div>
 </body>
 
