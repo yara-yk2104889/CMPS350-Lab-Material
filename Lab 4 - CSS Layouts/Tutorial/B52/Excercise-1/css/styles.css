@@ -77,6 +77,8 @@ nav ul li a {
 main {
     background-image: url('../img/bg.jpg');
     background-size: cover;
+
+
     color: var(--dark-text-color);
     display: flex;
     flex-direction: column;
@@ -155,12 +157,12 @@ footer {
             "header nav"
             "main main"
             "footer footer";
-
-        ;
     }
+
 
     nav ul {
         display: flex;
+        justify-content: end;
     }
 
     header h1 {
