@@ -103,4 +103,11 @@ numbers.reduce((acc, curr) => acc * curr);
 let maxNumber = numbers.reduce((acc, curr) => acc > curr ? acc : curr);
 
 
+let [a, ...rest] = [1, 2, 3, 4, 5, 65]
+
+console.log(a);
+console.log(rest);
+
+
+
 
