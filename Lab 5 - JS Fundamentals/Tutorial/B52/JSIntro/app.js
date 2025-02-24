@@ -238,4 +238,20 @@
 
 // [1,2,3,4,5,6]
 
-let sum = numbers.reduce((acc, curr) => acc + curr, 0);
+// let sum = numbers.reduce((acc, curr) => acc + curr, 0);
+
+
+let numCom = [
+    1, [2, 3, [1, 2, [3]]]
+]
+
+console.log(numCom.flat(Infinity));
+
+a > b ? a : b;
+
+if(a > b){
+    return a;
+}
+else {
+    return b;
+}
