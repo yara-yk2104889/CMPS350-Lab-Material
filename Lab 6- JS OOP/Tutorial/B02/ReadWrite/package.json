@@ -1,0 +1,15 @@
+{
+  "name": "readwrite",
+  "version": "1.0.0",
+  "description": "This project allows users to read from the console and write to a file",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdulahi",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "type": "module"
+}
