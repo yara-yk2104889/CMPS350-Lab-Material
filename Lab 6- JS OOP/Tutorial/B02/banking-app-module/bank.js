@@ -5,3 +5,12 @@ const accounts = [
     { accountNo: 126, balance: 4000, type: 'Current', name: 'Smith' },
     { accountNo: 127, balance: 5000, type: 'Savings', name: 'Alex' },
 ]
+
+function addAccount(account) {
+    // validate before adding
+    accounts.push(account);
+}
+
+function getAccount(accountNo) {
+    return accounts.find(acc => acc.accountNo === accountNo);
+}
