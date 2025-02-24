@@ -19,16 +19,16 @@ function withdraw(accountNo, amount) {
 
 }
 
-function addAccount(accountNo, balance, type) {
+export function addAccount(accountNo, balance, type) {
     accounts.push({ accountNo, balance, type });
 }
 function getAccount(accountNo) {
     return accounts.find(acc => acc.accountNo === accountNo);
 }
-function sumBalance() {
+export function sumBalance() {
     return accounts.reduce((sum, account) => sum + account.balance, 0);
 }
-function deleteAccount(accountNo) {
+export function deleteAccount(accountNo) {
     const index = accounts.findIndex(acc => acc.accountNo === accountNo);
     accounts.splice(index, 1);
 
