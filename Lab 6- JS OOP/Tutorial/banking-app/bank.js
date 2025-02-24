@@ -62,9 +62,17 @@ distributeBenefit(100);
 
 console.log(accounts);
 
-// function deductFee(monthlyFee)
-// function toJson()
-// function fromJson(json)
+export function toJson() {
+    return JSON.stringify(accounts);
+}
+export function fromJson(json) {
+    return JSON.parse(json);
+}
+
+console.log(toJson());
+console.log(accounts);
+
+// export the functions above
 
 
 /*
