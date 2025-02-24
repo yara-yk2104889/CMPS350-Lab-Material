@@ -4,7 +4,7 @@ const accounts = [
     { accountNo: 345, balance: 35000, type: 'Savings' },
 ]
 
-function deposit(accountNo, amount) {
+export function deposit(accountNo, amount) {
     const account = accounts.find(acc => acc.accountNo === accountNo);
     account.balance += amount;
 }
@@ -50,7 +50,7 @@ function distributeBenefit(benefitPercentage) {
 
 }
 
-function deductFee(monthlyFee) {
+export function deductFee(monthlyFee) {
     accounts.forEach(acc => {
         if (acc.type === 'Current')
             acc.balance -= monthlyFee;
@@ -58,33 +58,9 @@ function deductFee(monthlyFee) {
 
 }
 
-// distributeBenefit(100);
-
-// console.log(accounts);
-
 export function toJson() {
     return JSON.stringify(accounts);
 }
 export function fromJson(json) {
     return JSON.parse(json);
 }
-
-// console.log(toJson());
-// console.log(accounts);
-
-// export the functions above
-
-
-/*
-const numbers = [1, 2, 3, 4, 5];
-
-const sum = numbers.reduce((acc, num) => acc + num, 0);
-
-const objects = [
-    { name: 'John', age: 20 },
-    { name: 'Jane', age: 30 },
-    { name: 'Jack', age: 40 },
-]
-
-const sum = numbers.reduce((acc, obj) => acc + obj.age, 0);
-*/
