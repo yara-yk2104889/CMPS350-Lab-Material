@@ -6,11 +6,15 @@ const accounts = [
     { accountNo: 127, balance: 5000, type: 'Savings', name: 'Alex' },
 ]
 
-function addAccount(account) {
+export function addAccount(account) {
     // validate before adding
     accounts.push(account);
 }
 
-function getAccount(accountNo) {
+export function getAccount(accountNo) {
     return accounts.find(acc => acc.accountNo === accountNo);
+}
+
+export function getAccounts() {
+    return accounts;
 }
