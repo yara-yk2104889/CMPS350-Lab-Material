@@ -25,10 +25,43 @@ function addAccount(accountNo, balance, type) {
 function getAccount(accountNo) {
     return accounts.find(acc => acc.accountNo === accountNo);
 }
-// function sumBalance()
-// function avgBalance()
+function sumBalance() {
+    return accounts.reduce((sum, account) => sum + account.balance, 0);
+}
+function deleteAccount(accountNo) {
+    const index = accounts.findIndex(acc => acc.accountNo === accountNo);
+    accounts.splice(index, 1);
 
-// function distributeBenefit(benefitPercentage)
+
+    // accounts = accounts.filter(acc => acc.accountNo !== accountNo);
+}
+function avgBalance() {
+    return sumBalance() / accounts.length;
+}
+
+console.log(`The Sum of all accounts = ${sumBalance()}`);
+
+
+function distributeBenefit(benefitPercentage) {
+    accounts.forEach(acc => {
+        if (acc.type === 'Savings')
+            acc.balance += acc.balance * benefitPercentage / 100;
+    });
+
+}
+
+function deductFee(monthlyFee) {
+    accounts.forEach(acc => {
+        if (acc.type === 'Current')
+            acc.balance -= monthlyFee;
+    });
+
+}
+
+distributeBenefit(100);
+
+console.log(accounts);
+
 // function deductFee(monthlyFee)
 // function toJson()
 // function fromJson(json)
