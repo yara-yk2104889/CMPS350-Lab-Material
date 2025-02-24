@@ -22,7 +22,7 @@ function withdraw(accountNo, amount) {
 export function addAccount(accountNo, balance, type) {
     accounts.push({ accountNo, balance, type });
 }
-function getAccount(accountNo) {
+export function getAccount(accountNo) {
     return accounts.find(acc => acc.accountNo === accountNo);
 }
 export function sumBalance() {
@@ -39,7 +39,7 @@ function avgBalance() {
     return sumBalance() / accounts.length;
 }
 
-console.log(`The Sum of all accounts = ${sumBalance()}`);
+// console.log(`The Sum of all accounts = ${sumBalance()}`);
 
 
 function distributeBenefit(benefitPercentage) {
@@ -58,9 +58,9 @@ function deductFee(monthlyFee) {
 
 }
 
-distributeBenefit(100);
+// distributeBenefit(100);
 
-console.log(accounts);
+// console.log(accounts);
 
 export function toJson() {
     return JSON.stringify(accounts);
@@ -69,8 +69,8 @@ export function fromJson(json) {
     return JSON.parse(json);
 }
 
-console.log(toJson());
-console.log(accounts);
+// console.log(toJson());
+// console.log(accounts);
 
 // export the functions above
 
