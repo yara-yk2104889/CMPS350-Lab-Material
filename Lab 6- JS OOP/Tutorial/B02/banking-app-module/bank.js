@@ -29,11 +29,9 @@ function update(updatedAccount) {
 
     // accounts = accounts.filter(acc => acc.accountNo !== accountNo); //error [constant] cannot be reassigned
 }
-
 function sumBalance() {
     return accounts.reduce((acc, curr) => acc + curr.balance, 0);
 }
-
 function averageBalance() {
     return sumBalance() / accounts.length;
 }
