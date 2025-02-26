@@ -1,0 +1,15 @@
+{
+  "name": "banking-app",
+  "version": "1.0.0",
+  "description": "Banking application",
+  "main": "read-user-input.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abdulahi Hassen",
+  "license": "ISC",
+  "dependencies": {
+    "prompt-sync": "^4.2.0"
+  },
+  "type": "module"
+}
