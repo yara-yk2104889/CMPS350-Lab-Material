@@ -1,5 +1,5 @@
 import { expect } from "chai";
-import { addAccount, getAccounts, getAccount } from "../bank.js";
+import { addAccount, getAccounts, getAccount, withdraw, deposit } from "../bank.js";
 import { it } from "mocha";
 
 
@@ -12,11 +12,11 @@ describe("The bank", () => {
         expect(finalSize).to.equal(initialSize + 1);
     });
 
-    it("Withdraw 1000 from account 111", () => {
-        const account = getAccount(111);
-        
+    it("Withdraw 1000 from account 555", () => {
+        const account = getAccount(555);
+
         const initialBalance = account.balance;
-        withdraw(111, 1000);
+        withdraw(555, 1000);
         const finalBalance = account.balance;
         expect(finalBalance).to.equal(initialBalance - 1000);
     });
