@@ -1,0 +1,26 @@
+[
+    {
+        "accountNo": 1,
+        "balance": 1000,
+        "type": "Savings",
+        "name": "John Doe"
+    },
+    {
+        "accountNo": 2,
+        "balance": 2000,
+        "type": "Current",
+        "name": "Ali Doe"
+    },
+    {
+        "accountNo": 3,
+        "balance": 3000,
+        "type": "Savings",
+        "name": "Omar Smith"
+    },
+    {
+        "accountNo": 4,
+        "balance": 4000,
+        "type": "Current",
+        "name": "Jane Smith"
+    }
+]

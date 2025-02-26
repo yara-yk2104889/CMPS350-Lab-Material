@@ -25,4 +25,25 @@ function withdraw(accountNo, amount) {
     account.balance -= amount;
 }
 
+function deleteAccount(accountNo) {
+    const index = accounts.findIndex(acc => acc.accountNo === accountNo);
+    if (index === -1) {
+        return 'Account not found';
+    }
+    accounts.splice(index, 1); // O(n)
+}
 
+function sumBalance() {
+    return accounts.reduce((sum, curr) => sum + curr.balance, 0);
+}
+
+function toJSON() {
+    return JSON.stringify(accounts);
+
+}
+function fromJSON(json) {
+    return JSON.parse(json);
+}
+
+
+console.log(toJSON());
