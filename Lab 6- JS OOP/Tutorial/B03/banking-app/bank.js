@@ -5,17 +5,17 @@ const accounts = [
     { accountNo: 4, balance: 4000, type: 'Current', name: 'Jane Smith' },
 ]
 
-function getAccount(accountNo) {
+export function getAccount(accountNo) {
     return accounts.find(acc => acc.accountNo === accountNo);
 }
-function deposit(accountNo, amount) {
+export function deposit(accountNo, amount) {
     const account = getAccount(accountNo);
     if (!account) {
         return 'Account not found';
     }
     account.balance += amount;
 }
-function withdraw(accountNo, amount) {
+export function withdraw(accountNo, amount) {
     const account = getAccount(accountNo);
     if (!account) {
         return 'Account not found';
@@ -25,7 +25,7 @@ function withdraw(accountNo, amount) {
     account.balance -= amount;
 }
 
-function deleteAccount(accountNo) {
+export function deleteAccount(accountNo) {
     const index = accounts.findIndex(acc => acc.accountNo === accountNo);
     if (index === -1) {
         return 'Account not found';
@@ -33,15 +33,15 @@ function deleteAccount(accountNo) {
     accounts.splice(index, 1); // O(n)
 }
 
-function sumBalance() {
+export function sumBalance() {
     return accounts.reduce((sum, curr) => sum + curr.balance, 0);
 }
 
-function toJSON() {
+export function toJSON() {
     return JSON.stringify(accounts);
 
 }
-function fromJSON(json) {
+export function fromJSON(json) {
     return JSON.parse(json);
 }
 
