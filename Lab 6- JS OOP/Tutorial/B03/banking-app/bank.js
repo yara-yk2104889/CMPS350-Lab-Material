@@ -5,6 +5,14 @@ const accounts = [
     { accountNo: 4, balance: 4000, type: 'Current', name: 'Jane Smith' },
 ]
 
+export function addAccount(account) {
+    accounts.push(account);
+}
+
+export function getAccounts() {
+    return accounts;
+}
+
 export function getAccount(accountNo) {
     return accounts.find(acc => acc.accountNo === accountNo);
 }
@@ -39,7 +47,6 @@ export function sumBalance() {
 
 export function toJSON() {
     return JSON.stringify(accounts);
-
 }
 export function fromJSON(json) {
     return JSON.parse(json);
