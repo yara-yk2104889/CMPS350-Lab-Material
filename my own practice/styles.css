@@ -1,0 +1,23 @@
+.boxes{
+    border: 2px solid black;
+    height: 300px;
+
+    display: flex;
+    flex-direction: row;
+
+    justify-content: start;
+    align-items: end;
+}
+
+.green{
+    background-color: green;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.blue{
+    background-color: blue;
+    align-self: start;
+}

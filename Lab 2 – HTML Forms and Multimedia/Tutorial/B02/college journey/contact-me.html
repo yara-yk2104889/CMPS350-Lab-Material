@@ -15,54 +15,35 @@
 
         <div class="form-group">
             <label for="">First Name</label>
-            <input type="text" name="first-name" required>
+            <input type="text" name="first-name" maxlength="10" required>
+        </div>
+        <!-- <input type="submit" value="submit"> -->
+
+        <div class="form-group">
+            <label for="age">Age</label>
+            <input type="number" name="age" id="age" min="18" max="130" required>
         </div>
 
-        <fieldset>
-            <legend>The Group Name</legend>
-            <div class="form-group">
-                <label for="">Last Name</label>
-                <input type="text" name="last-name">
-            </div>
-
-            <div class="form-group">
-                <label for="">Email</label>
-                <input type="email" name="email">
-            </div>
-
-            <div class="form-group">
-                <label for="">Message</label>
-                <textarea name="message" id="" cols="30" rows="10"></textarea>
-            </div>
-
-            <div>
-                <label for="">Gender</label>
-
-                <label for="">Female</label>
-                <input type="radio" name="gender" value="female">
-                <label for="">Male</label>
-                <input type="radio" name="gender" value="male">
-
-            </div>
-
-        </fieldset>
-        <div>
-
-            <select name="country" id="">
-                <option value="qatar">Qatar </option>
-                <option value="usa">USA </option>
-                <!-- option groups -->
-                <optgroup label="Asia">
-                    <option value="china">China</option>
-                    <option value="india">India</option>
-            </select>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" name="email" id="email" required>
         </div>
 
-        0 <input type="range" min="0" max="100" step="5"> 100
-        <!-- <button type="submit">Submit</button> -->
 
-        <input type="submit" value="Submit">
-        <input type="reset" value="Reset">
+        <div class="form-group">
+            <label for="gender">Gender :</label>
+            <label for="female">Female</label>
+            <input type="radio" name="gender" value="female" id="female">
+
+            <label for="male">Male</label>
+            <input type="radio" name="gender" value="male" id="male">
+        </div>
+
+        
+       
+        
+
+
     </form>
 </body>
 

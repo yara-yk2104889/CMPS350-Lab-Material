@@ -1,0 +1,127 @@
+/* selectors and their priority */
+
+/* #id .class element */
+/* ID IS BAD. USE CLASS CAUSE U CAN USE MANY TIMES */
+
+/* HIERARCHY: id class div*/
+
+
+
+:root{
+    --bg: white;
+    --text: black;
+    --primary: teal;
+    --secondary: lightgray;
+
+}
+
+/* remove all default styling!!!*/
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header{
+    background-color: var(--primary);
+    color: white;
+    padding: 3rem;
+    text-align: center;
+}
+
+nav{
+    margin-top: 1rem;
+}
+
+nav ul{
+    list-style: none;
+}
+
+nav li{
+    padding: 0.5rem;
+    justify-content: center;
+}
+nav a{
+    color: white;
+    text-decoration: none;
+}
+nav a:hover{
+    color: var(--secondary);
+}
+
+section{
+    padding: 2rem;
+}
+
+section h2{
+    background-color: var(--primary);
+    padding: 0.5rem 1rem;
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 0.25rem;
+}
+
+p{
+    margin: 1rem 0;
+}
+
+.box{
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    display: inline-block;
+    margin: 1rem;
+    
+}
+
+article{  
+    margin: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--secondary);
+    transition: ease-in 0.3s;
+}
+
+article:hover{
+    scale:1.1;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+
+}
+
+footer{
+    background-color: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+
+.green{
+    background-color: green;
+    align-self: flex-start;
+}
+
+.yellow{
+    background-color: yellow;
+}
+
+.blue{
+    background-color: blue;
+    align-self: flex-end;
+}
+
+.boxes{
+    border: 2px solid black;
+    height: 300px;
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+
+
+}

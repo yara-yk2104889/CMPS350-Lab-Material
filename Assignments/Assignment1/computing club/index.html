@@ -7,33 +7,167 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Computing Club</title>
 
-    <!-- google font link -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet">
 
-    <!-- the style sheet -->
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<!-- Please remove all the comments before submission -->
-
 <body>
-    <!-- make sure you use semantic tags while creating the HTML -->
-    <!-- Example on how to add icon -->
-    <i class="fa fa-instagram"></i>
-
-    <!-- You are free to use the font you want, it doesn't have to be exact -->
-    <!-- Example shadow .. check the css -->
-
-    <!-- Get shadow from this lin -->
-    <!-- Just click on the box and copy then paste -->
-    <!-- https://getcssscan.com/css-box-shadow-examples -->
 
     <header>
-        <h1>Hello</h1>
+        <div class="logo">
+            <img src="images/logo-light.jpg" alt="Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About us</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
     </header>
+    
 
-    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae, veritatis.</p>
+
+    <section id="title">
+        <div class="text-content">
+            <h1>Hi, we are <span class="highlight">the Computing Club.</span></h1>
+            <h1>A QU Student Club</h1>
+            <p>Empowering innovation through technology and community.</p>
+            <div class="buttons">
+                <button class="primary-btn">Contact Us</button>
+                <button class="secondary-btn">About Us</button>
+            </div>
+        </div>
+        <img src="images/student.jpg" alt="Student">
+    </section>
+    
+
+    <section id="activities">
+        <h3>Latest Club Activities</h3>
+        
+        <div class="activities-grid">
+            <div class="activities-list">
+                <div class="act">
+                    <img class="act-img" src="images/activity-1.jpg" alt="Robotics">
+                    <div class="act-content">
+                        <span class="tag">Robotics</span>
+                        <h4>Robo-Vision: Giving your robot eyes</h4>
+                        <p>The workshop will build on the previous one and allow students to implement computer vision using Python and OpenCV...</p>
+                        <div class="act-footer">
+                            <img class="mini-logo" src="images/logo-light.jpg" alt="Logo">
+                            <span>QUCC</span>
+                            <span>Jan 17, 2022 • 3 min</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="act">
+                    <img class="act-img" src="images/activity-2.jpg" alt="Game Dev">
+                    <div class="act-content">
+                        <span class="tag">Game Development</span>
+                        <h4>Introduction to Game Development</h4>
+                        <p>This series of workshops will help attendees take their first steps into game development with hands-on projects...</p>
+                        <div class="act-footer">
+                            <img class="mini-logo" src="images/logo-light.jpg" alt="Logo">
+                            <span>QUCC</span>
+                            <span>Dec 10, 2021 • 2 min</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="act">
+                    <img class="act-img" src="images/activity-3.jpg" alt="Cryptography">
+                    <div class="act-content">
+                        <span class="tag">Security</span>
+                        <h4>Discover Cryptography</h4>
+                        <p>Create awareness about cryptography in Qatar University. A hands-on workshop to explore encryption and security concepts...</p>
+                        <div class="act-footer">
+                            <img class="mini-logo" src="images/logo-light.jpg" alt="Logo">
+                            <span>QUCC</span>
+                            <span>Nov 10, 2021 • 3 min</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="act">
+                    <img class="act-img" src="images/activity-4.png" alt="Web Development">
+                    <div class="act-content">
+                        <span class="tag">Web Dev</span>
+                        <h4>HTML & CSS: Basics of Web Design</h4>
+                        <p>Explore WebDev! A series that introduces students to web development, starting with HTML and CSS basics...</p>
+                        <div class="act-footer">
+                            <img class="mini-logo" src="images/logo-light.jpg" alt="Logo">
+                            <span>QUCC</span>
+                            <span>Nov 28, 2021 • 4 min</span>
+                        </div>
+                    </div>
+                </div>
+    
+                <div class="load-more">
+                    <button>Load More</button>
+                </div>
+            </div>
+    
+            <aside class="right-section">
+                <section class="tags">
+                    <h3>Tags</h3>
+                    <p>#qucc</p>
+                    <p>#qu</p>
+                    <p>#student-club</p>
+                    <p>#webdev</p>
+                    <p>#security</p>
+                    <p>#robotics</p>
+                </section>
+
+                <section class="lets_talk">
+                    <h3>Let's Talk</h3>
+                    <p>Do you want to learn more about the club and how you can join us? Let us have a conversation.</p>
+                    <div class="socials">
+                        <i class="fa fa-discord"></i>
+                        <i class="fa fa-twitter"></i>
+                        <i class="fa fa-facebook"></i>
+                    </div>
+                </section>
+
+                <section class="newsletter">
+                    <h3>Newsletter</h3>
+                    <p>Subscribe to our newsletter to be among the first to keep up with the latest updates.</p>
+                    <form>
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                </section>
+            </aside>
+        </div>
+    </section>
+    
+    
+   
+
+    <footer>
+        <div class="footer-content">
+            <img class="circle-img" width="10%" src="images/logo-light.jpg" alt="logo">
+            <p>Thanks for visiting our website. You can email us - computing.club@qu.edu.qa</p>
+        </div>
+        <div class="footer-links">
+            <ul>
+                <h4>Quick Links</h4>
+                <li><a href="#">Join Us</a></li>
+                <li><a href="#about">About Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
+            </ul>
+            <ul>
+                <h4>Communication</h4>
+                <li><a href="#">Facebook</a></li>
+                <li><a href="#">Twitter</a></li>
+                <li><a href="#">Instagram</a></li>
+            </ul>
+        </div>
+        <p>&copy; 2023 CMPS350 Web Dev</p>
+    </footer>
+    
 
 </body>
 

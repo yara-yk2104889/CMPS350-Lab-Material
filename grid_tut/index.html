@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+        .box{
+            padding: 1rem;
+        }
+        .green{
+            background-color: green;
+            grid-area: green;
+        }
+        .red{
+            background-color: red;
+            grid-area: red;
+
+        }
+        .yellow{
+            background-color: yellow;
+            grid-area: yellow;
+        }
+
+        .container{
+            border: 1px solid black;
+            height: 70vh;
+            display: grid;
+
+            grid-template-rows: auto 1fr auto ;
+            grid-template-columns: 1fr 4fr;
+            gap: 1%;
+            /* change grid flow */
+            /* grid-auto-flow: column; */
+
+            grid-template-areas: 
+            "yellow blue"
+            "yellow green"
+            "yellow red"
+            ;
+        }
+
+        .blue{
+            background-color: blue;
+            grid-area: blue;
+        }
+
+        @media screen and (min-wdith : 400px){
+            .container{
+                grid-template-rows: auto 1fr auto;
+                grid-template-columns: 1fr 4fr;
+
+                grid-template-areas: 
+                "blue blue"
+                "yellow green"
+                "red red"
+                ;
+                
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="box green">Green</div>
+        <div class="box red">Red</div>
+        <div class="box yellow">Yellow</div>
+        <div class="box blue">Blue</div>
+
+
+    </div>
+</body>
+</html>

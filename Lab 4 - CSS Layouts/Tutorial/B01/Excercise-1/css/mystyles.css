@@ -1,0 +1,162 @@
+
+*{
+    margin : 0%;
+    padding : 0%;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-colour: white;
+    --dark-text: black;
+    --light-text: rgb(255, 255, 255);
+    --btn-colour: orange;
+    --highlight: rgb(44, 180, 60);
+    --link-colour: rgb(108, 203, 56);
+    --separator: #bd0e0e;
+
+    color-scheme: light;
+}
+
+/* body{
+    background-color: var(--bg-colour);
+    color: var(--dark-text);
+} */
+
+header h1{
+    text-align: center;
+    border-bottom: 1px solid var(--separator);
+    padding: 1rem;
+
+    span{
+        color: var(--highlight);
+    }
+}
+
+/*check html for span part*/
+/* header h1 span{         
+    color: var(--highlight);
+} */
+
+nav ul{
+    list-style: none;
+    padding: 1rem;
+    text-align: center;
+}
+
+nav ul li{   
+    /*the margin is in between the li's themselevs*/
+    margin: 0.2rem;
+}
+
+nav ul li a{
+    text-decoration: none;
+
+}
+
+main{
+    background-image: url(../img/bg.jpg);
+    background-size: cover;
+    color: var(--light-text);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    flex: 1;
+    grid-template-areas: main;
+
+}
+
+.container{
+    grid-template-rows: auto auto 1fr auto ;
+    grid-template-columns: auto auto;
+    grid-template-areas: 
+    "header"
+    "nav"
+    "main"
+    "footer"
+    ;
+}
+
+header{
+    grid-template-areas: header;
+}
+nav{
+    grid-template-areas: nav;
+}
+
+
+.sub-img{
+    height: 20vh ;
+    width: 20vw;
+    object-fit: cover;
+}
+
+.btn-buy{
+    background-color: var(--btn-colour);
+    color: var(--light-text);
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+footer{
+    background-color: var(--btn-colour);
+    color: var(--light-text);
+    text-align: center;
+    padding: 0.55rem;
+    grid-template-areas: footer;
+}
+
+/* media query */
+/* :root:has(#theme:checked){
+    --bg-color: black;
+    --light-text: black;
+    --dark-text: white;
+    color-scheme: dark;
+} */
+
+@media screen and (prefers-color-scheme: dark) {
+    :root{
+        color-scheme: dark;
+    }
+}
+
+
+.main-header {
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (min-width: 400px) {
+    .main-header {
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 800px) {
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        h1{
+            border-right: 1px solid red;
+            border-bottom: none;
+        }
+    }
+
+    nav ul{
+        display: flex;
+    }
+}
+
+@media screen and (min-width: 600px) {
+
+    .container{
+        grid-template-columns: 1fr 4fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: 
+            "header main"
+            "nav main"
+            "footer footer";
+    }
+}
