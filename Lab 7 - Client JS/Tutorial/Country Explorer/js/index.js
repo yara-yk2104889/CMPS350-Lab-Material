@@ -19,5 +19,6 @@ async function handleRegionChange() {
     const url = `${REGION_BASE_URL}${regionDD.value}`;
     const response = await fetch(url);
     const data = await response.json();
-    console.log(data);
+    const countryNames = data.map(country => country.name.common);
+    console.log(countryNames);
 }
