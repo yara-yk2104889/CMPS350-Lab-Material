@@ -15,10 +15,14 @@ countryDD.addEventListener("change", handleCountryChange);
 // write the function to handle the region change event
 
 async function handleRegionChange() {
-   
+
     const url = `${REGION_BASE_URL}${regionDD.value}`;
     const response = await fetch(url);
     const data = await response.json();
     const countryNames = data.map(country => country.name.common);
-    console.log(countryNames);
+    const countryOptions = countryNames
+        .map(name => `<option value="${name}">${name}</option>`);
+    countryDD.innerHTML = countryOptions.join(' ');
 }
+
+
