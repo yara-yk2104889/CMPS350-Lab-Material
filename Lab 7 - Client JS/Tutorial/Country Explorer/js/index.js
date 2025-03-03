@@ -15,7 +15,7 @@ countryDD.addEventListener("change", handleCountryChange);
 // write the function to handle the region change event
 
 async function handleRegionChange() {
-    alert("Region Changed");
+   
     const url = `${REGION_BASE_URL}${regionDD.value}`;
     const response = await fetch(url);
     const data = await response.json();
