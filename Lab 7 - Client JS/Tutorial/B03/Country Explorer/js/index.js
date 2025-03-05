@@ -47,6 +47,7 @@ async function handleCountryChange(e) {
 
 }
 
+// helper method
 function convertCountryToHTML(country) {
     const currencies = Object.values(country.currencies)
         .map(currency => currency.name).join(', ');
@@ -55,7 +56,7 @@ function convertCountryToHTML(country) {
 
     return `
         <h1>${country.name.common}</h1>
-        <img src="${country.flags.png}" alt="${country.flags.alt}">
+        <img src="${country.flags.png}" alt="${country.flags.alt}" class="flag-img">
         <table>
             <tr>
                 <th>Official Country Name</th>
