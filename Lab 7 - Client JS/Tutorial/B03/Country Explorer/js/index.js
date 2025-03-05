@@ -18,7 +18,7 @@ countryDD.addEventListener('change', handleCountryChange);
 // step 4 is to define the callback function
 async function handleRegionChange(e) {
     let countries = []
-    if (localStorage.countries) {
+    if (localStorage[e.target.value]) {
         countries = JSON.parse(localStorage.countries);
         console.log('from local storage');
 
@@ -26,13 +26,10 @@ async function handleRegionChange(e) {
         const url = `${regionBaseURL}${e.target.value}`;
         const response = await fetch(url);
         countries = await response.json();
-        localStorage.countries = JSON.stringify(countries);
+        localStorage[e.target.value] = JSON.stringify(countries);
         console.log('from API');
 
     }
-
-
-
     const countriesOptions = countries
         .map(country => `<option value="${country.name.common}">${country.name.common}</option>`)
         .join(' ')
