@@ -1,4 +1,3 @@
-
 .todo-form {
     background: #dfe8ec;
     width: 400px;
@@ -7,14 +6,17 @@
     height: fit-content;
     padding: 10px;
 }
+
 .deleted {
     background-color: darkgreen;
 }
-a{
+
+a {
     display: block;
     text-align: right;
-    margin : 20px;
+    margin: 20px;
 }
+
 .title {
     background-color: darkgreen;
     display: flex;
@@ -29,10 +31,12 @@ a{
     transform: scale(2);
     margin: 10px;
 }
-.submit-btn{
+
+.submit-btn {
     border-style: none;
     background-color: white;
 }
+
 .fa-plus {
     color: white;
     background-color: #6475ee;
