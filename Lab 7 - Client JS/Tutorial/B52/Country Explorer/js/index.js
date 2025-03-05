@@ -42,7 +42,7 @@ async function handleCountryChange(e) {
 
 function convertCountryToHTML(country) {
     const currencies = Object.values(country.currencies).map(currency => currency.name).join(", ");
-    console.log(currencies);
+    const languages = Object.values(country.languages).join(", ");
 
     return `
         <h1> ${country.name.common}</h1> <br>
@@ -60,6 +60,10 @@ function convertCountryToHTML(country) {
             <tr>
                 <th>Currencies</th>
                 <td> ${currencies}</td>
+            </tr>
+            <tr>
+                <th>Languages</th>
+                <td> ${languages}</td>
             </tr>
         </table>
         `
