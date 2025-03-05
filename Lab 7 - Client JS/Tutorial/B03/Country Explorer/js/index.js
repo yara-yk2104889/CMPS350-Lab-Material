@@ -15,5 +15,5 @@ regionDD.addEventListener('change', handleRegionChange);
 
 // step 4 is to define the callback function
 function handleRegionChange(e) {
-    alert("Region changed");
+    alert("Region changed to " + e.target.value);
 }
