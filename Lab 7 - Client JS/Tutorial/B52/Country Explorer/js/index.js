@@ -20,10 +20,26 @@ countryDD.addEventListener('change', handleCountryChange);
 
 async function handleRegionChange(e) {
     // get the countries of the selected region from an API end point
-    const url = `${regionsEndPoint}${e.target.value}`;
-    const response = await fetch(url)
-    const data = await response.json();
-    const countryOptions = data
+
+    if (localStorage.countries) {
+        countries = JSON.parse(localStorage.countries);
+        console.log("Countries from local storage");
+
+    }
+    else {
+        const url = `${regionsEndPoint}${e.target.value}`;
+        const response = await fetch(url)
+        countries = await response.json();
+        // we should save this countries to the local storage
+        localStorage.countries = JSON.stringify(countries);
+        console.log("Countries from API");
+    }
+    populateCountryDropDown(countries);
+
+}
+
+function populateCountryDropDown(countries) {
+    const countryOptions = countries
         .map(country => country.name.common)
         .map(name => `<option value="${name}">${name}</option>`)
         .join('');
@@ -31,7 +47,6 @@ async function handleRegionChange(e) {
     countryDD.innerHTML = countryOptions;
 
 }
-
 
 async function handleCountryChange(e) {
     const url = `${countryEndPoint}${countryDD.value}`;
