@@ -10,7 +10,8 @@ const clearTodos = document.querySelector('#clear-todos');
 form.addEventListener('submit', handleSubmit);
 clearTodos.addEventListener('click', handleClearTodos);
 
-const todos = []
+let todos = localStorage.todos ? JSON.parse(localStorage.todos) : []
+renderTodos();
 
 // 4. create the function that will handle the submit event
 
@@ -23,6 +24,8 @@ function handleSubmit(e) {
 
     todos.push(todo);
 
+    localStorage.todos = JSON.stringify(todos);
+
     renderTodos();
     form.reset();
 
@@ -34,7 +37,8 @@ function convertToCard(todo) {
     return ` <div class="form-group todo" id="">
                     <p class="todo-title ${todo.completed ? 'strike' : ''}" id="${todo.id}" >${todo.title}</p>
                     <input class="completed icon" type="checkbox"
-                    onclick="" ${todo.completed ? 'checked' : ''}>
+                    onclick="" ${todo.completed ? 'checked' : ''} 
+                    onchange="toggleCompleted('${todo.id}')">
                     <i class="fa fa-trash icon" onclick="deleteTodo(${todo.id})"></i>
             </div>`;
 
@@ -44,13 +48,22 @@ function renderTodos() {
     todolistContainer.innerHTML = todos.map(todo => convertToCard(todo)).join('');
 }
 
+function toggleCompleted(id) {
+    const index = todos.findIndex(todo => todo.id === id);
+    todos[index].completed = !todos[index].completed;
+    localStorage.todos = JSON.stringify(todos);
+    renderTodos();
+}
 
 function deleteTodo(id) {
     const index = todos.findIndex(todo => todo.id === id);
     todos.splice(index, 1);
+    localStorage.todos = JSON.stringify(todos);
     renderTodos();
 }
 
 function handleClearTodos(event) {
-    alert('Clearing todos');
+    todos = [];
+    delete localStorage.todos;
+    renderTodos();
 }
