@@ -10,6 +10,8 @@ const clearTodos = document.querySelector('#clear-todos');
 form.addEventListener('submit', handleSubmit);
 clearTodos.addEventListener('click', handleClearTodos);
 
+const todos = []
+
 // 4. create the function that will handle the submit event
 
 function handleSubmit(e) {
@@ -17,7 +19,11 @@ function handleSubmit(e) {
     e.preventDefault();
     const data = new FormData(form);
     const todo = Object.fromEntries(data);
-    todolistContainer.innerHTML += convertToCard(todo);
+    todo.id = `id-${Date.now()}`;
+
+    todos.push(todo);
+
+    renderTodos();
     form.reset();
 
 
@@ -26,12 +32,23 @@ function handleSubmit(e) {
 // 5. helper function to generate the todo item
 function convertToCard(todo) {
     return ` <div class="form-group todo" id="">
-                    <p class="todo-title ${todo.completed ? 'strike' : ''}" id="" >${todo.title}</p>
+                    <p class="todo-title ${todo.completed ? 'strike' : ''}" id="${todo.id}" >${todo.title}</p>
                     <input class="completed icon" type="checkbox"
                     onclick="" ${todo.completed ? 'checked' : ''}>
-                    <i class="fa fa-trash icon" onclick=""></i>
+                    <i class="fa fa-trash icon" onclick="deleteTodo(${todo.id})"></i>
             </div>`;
 
+}
+
+function renderTodos() {
+    todolistContainer.innerHTML = todos.map(todo => convertToCard(todo)).join('');
+}
+
+
+function deleteTodo(id) {
+    const index = todos.findIndex(todo => todo.id === id);
+    todos.splice(index, 1);
+    renderTodos();
 }
 
 function handleClearTodos(event) {
