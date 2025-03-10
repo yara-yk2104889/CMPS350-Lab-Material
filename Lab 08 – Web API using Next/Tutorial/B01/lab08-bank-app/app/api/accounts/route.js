@@ -3,17 +3,7 @@ export async function GET(req) {
     const { type } = Object.fromEntries(searchParams.entries());
     return Response.json({ message: 'You called the GET', type });
 }
+export async function POST(req) {
+    return Response.json({ message: 'You called the POST' });
+}
 
-
-// const person = {
-//     name: 'John Doe',
-//     age: 25,
-//     address: {
-//         street: '123 Main Street',
-//         city: 'Springfield',
-//         state: 'IL',
-//         zip: '62701'
-//     }
-// }
-
-// const { name, age } = person;
