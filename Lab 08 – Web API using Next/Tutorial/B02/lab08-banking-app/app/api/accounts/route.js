@@ -6,6 +6,7 @@ const accounts = [
     { accountNo: 3, name: 'John Smith', balance: 3000, type: 'savings' },
     { accountNo: 4, name: 'Jane Smith', balance: 4000, type: 'current' },
 ]
+
 export async function GET(req) {
     const { searchParams } = new URL(req.url);
     const { type } = Object.fromEntries(searchParams.entries())
