@@ -20,7 +20,7 @@ class AccountRepo {
     async getAccounts(type) {
         const accounts = await fse.readJson(this.accountFilePath);
         if (type) {
-            return accounts.filter(account => account.type == type);
+            return accounts.filter(account => account.acctType == type);
         }
         return accounts;
     }
