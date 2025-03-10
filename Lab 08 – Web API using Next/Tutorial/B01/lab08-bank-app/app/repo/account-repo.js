@@ -1,6 +1,6 @@
-import path from 'path';
-import fse from 'fs-extra';
-import nanoid from 'nanoid';
+// import path from 'path';
+// import fse from 'fs-extra';
+// import nanoid from 'nanoid';
 
 class AccountRepo {
     constructor() {
@@ -39,13 +39,62 @@ class AccountRepo {
 
 
     //4. update an account
+    async updateAccount(accountNo, account) {
+        const accounts = await this.getAccounts();
+        const index = accounts.findIndex(account => account.accountNo == accountNo);
+
+        if (index === -1) {
+            return { error: 'account not found' };
+        }
+
+        accounts[index] = { ...accounts[index], ...account };
+        await this.saveAccounts(accounts);
+        return account;
+    }
 
 
     //5. delete an account
+    async deleteAccount(accountNo) {
+        const accounts = await this.getAccounts();
+        const index = accounts.findIndex(account => account.accountNo == accountNo);
 
+        if (index === -1) {
+            return { error: 'account not found' };
+        }
 
-    //6. read all transactions of an account
+        accounts.splice(index, 1);
+        await this.saveAccounts(accounts);
+        return { message: 'account deleted' };
+    }
 
-
-    //7. create a new transaction for an account
+    async addTransaction(transaction) {
+        transaction.accountNo = parseInt(transaction.accountNo.toString());
+        transaction.amount = parseInt(transaction.amount.toString());
+        try {
+            const accounts = await this.getAccounts();
+            const account = accounts.find(account => account.accountNo == transaction.accountNo);
+            if (transaction.transType == 'Deposit') {
+                account.deposit(transaction.amount);
+            } else {
+                account.withdraw(transaction.amount);
+            }
+            await this.saveAccounts(accounts);
+            return { message: 'transaction added' };
+        } catch (err) {
+            throw err;
+        }
+    }
 }
+
+export default AccountRepo;
+
+// const person = {
+//     name: 'John',
+//     age: 30
+// }
+
+// function updatePerson(p){
+//     person = p
+// }
+
+// updatePerson({name: 'Jane'});
