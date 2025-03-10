@@ -5,13 +5,15 @@ import { nanoid } from 'nanoid';
 class AccountRepo {
     constructor() {
         this.path = path.join(process.cwd(), 'app/data/accounts.json');
+        this.transactionPath = path.join(process.cwd(), 'app/data/transactions.json');
+
     }
 
     //1. read all accounts
     async getAccounts(type) {
         const accounts = await fse.readJson(this.path);
-        if (!type)
-            return accounts;
+        if (!type) return accounts;
+
         return accounts
             .filter(account =>
                 account.acctType.toLowerCase() == type.toLowerCase());
@@ -19,6 +21,13 @@ class AccountRepo {
 
     async saveAccounts(accounts) {
         return fse.writeJson(this.path, accounts);
+    }
+    async saveTransactions(transactions) {
+        return fse.writeJson(this.transactionPath, transactions);
+    }
+
+    async getTransactions() {
+        return fse.readJson(this.transactionPath);
     }
 
     //2 . read an account that has specific id
@@ -79,16 +88,25 @@ class AccountRepo {
             const accounts = await this.getAccounts();
             const account = accounts.find(account => account.accountNo == transaction.accountNo);
             if (transaction.transType == 'Deposit') {
-                account.deposit(transaction.amount);
+                account.balance += transaction.amount;
             } else {
-                account.withdraw(transaction.amount);
+                account.balance -= transaction.amount;
             }
             await this.saveAccounts(accounts);
+
+            const transactions = await this.getTransactions();
+            transaction.transId = nanoid();
+            transactions.push(transaction);
+            await this.saveTransactions(transactions);
             return { message: 'transaction added' };
+
+
         } catch (err) {
             throw err;
         }
     }
+
+
 }
 
 export default AccountRepo;

@@ -10,6 +10,10 @@ export async function GET(req) {
     return Response.json(accounts, { status: 200 });
 }
 export async function POST(req) {
-    return Response.json({ message: 'POST /api/accounts' });
+
+    // first capture the modified account
+    const newAccount = await req.json();
+    const response = await accountRepo.createAccount(newAccount);
+    return Response.json(response, { status: 201 });
 }
 
