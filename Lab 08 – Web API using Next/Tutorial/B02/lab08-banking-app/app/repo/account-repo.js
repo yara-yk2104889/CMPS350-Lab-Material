@@ -18,9 +18,11 @@ class AccountRepo {
     }
 
     async getAccounts(type) {
+        console.log('called with ', type);
+
         const accounts = await fse.readJson(this.accountFilePath);
         if (type) {
-            return accounts.filter(account => account.acctType == type);
+            return accounts.filter(account => account.acctType.toLowerCase() == type.toLowerCase());
         }
         return accounts;
     }
