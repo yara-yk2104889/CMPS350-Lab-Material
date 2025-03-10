@@ -1,6 +1,6 @@
-// import path from 'path';
-// import fse from 'fs-extra';
-// import nanoid from 'nanoid';
+import path from 'path';
+import fse from 'fs-extra';
+import { nanoid } from 'nanoid';
 
 class AccountRepo {
     constructor() {
