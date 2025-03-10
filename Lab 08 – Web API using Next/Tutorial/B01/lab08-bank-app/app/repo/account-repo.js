@@ -8,8 +8,11 @@ class AccountRepo {
     }
 
     //1. read all accounts
-    async getAccounts() {
-        return fse.readJson(this.path);
+    async getAccounts(type) {
+        const accounts = await fse.readJson(this.path);
+        if (!type)
+            return accounts;
+        return accounts.filter(account => account.acctType.toLowerCase() === type.toLowerCase());
     }
 
     async saveAccounts(accounts) {
