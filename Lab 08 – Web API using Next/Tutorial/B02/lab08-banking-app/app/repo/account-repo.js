@@ -46,13 +46,17 @@ class AccountRepo {
 
     async updateAccount(accountNo, account) {
         const accounts = await this.getAccounts();
+
         const index = accounts.findIndex(account => account.accountNo == accountNo);
+
         if (index < 0) {
             return { error: 'Account not found' };
         }
         accounts[index] = { ...accounts[index], ...account };
+
         await this.saveAccounts(accounts);
-        return account;
+
+        return account[index];
     }
 
     async deleteAccount(accountNo) {
