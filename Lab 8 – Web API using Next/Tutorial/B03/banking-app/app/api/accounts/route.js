@@ -1,13 +1,10 @@
+import accountRepo from "@/app/repo/account-repo";
 export async function GET(req) {
     // type = saving
     const { searchParams } = new URL(req.url);  //http://localhost:3000/api/accounts?type=saving
-    // const userQuery = searchParams.get('gender');
-
-    // parsed the form
-    const allUserQuery = Object.fromEntries(searchParams);
-
-    const message = { message: 'API endpoint GET http://localhost:3000/api', allUserQuery: allUserQuery };
-    return Response.json(message, { status: 200 });
+    const type = searchParams.get('type'); // saving
+    const accounts = await accountRepo.getAccounts(type);
+    return Response.json(accounts, { status: 200 });
 }
 
 // adding a new content [add a new account]
