@@ -63,5 +63,11 @@
         "acctType": "Current",
         "balance": 91919191,
         "accountNo": "YeROV5z5zk9EWEgXcCPxN"
+    },
+    {
+        "acctType": "Current",
+        "balance": 200200200,
+        "minimumBalance": 3000,
+        "accountNo": "vZigW8ENfVVR51FpvFdyx"
     }
 ]

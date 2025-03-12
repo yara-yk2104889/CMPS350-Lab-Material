@@ -64,8 +64,8 @@ lab08-bank-app/
 
 | **Method** | **URL**                             | **Description**                                                  |
 | ---------------- | ----------------------------------------- | ---------------------------------------------------------------------- |
-| GET-             | `/api/accounts/`                        | Returns all accounts. Filters by type if `?type=acctType` is passed. |
-| POST-            | `/api/accounts`                         | Adds a new account and returns it.                                     |
+| GET              | `/api/accounts/`                        | Returns all accounts. Filters by type if `?type=acctType` is passed. |
+| POST             | `/api/accounts`                         | Adds a new account and returns it.                                     |
 | GET-             | `/api/accounts/:accountNo`              | Returns the account by `accountNo`.                                  |
 | PUT-             | `/api/accounts/:accountNo`              | Updates the account by `accountNo` and returns it.                   |
 | DELETE           | `/api/accounts/:accountNo`              | Deletes the account by `accountNo`.                                  |

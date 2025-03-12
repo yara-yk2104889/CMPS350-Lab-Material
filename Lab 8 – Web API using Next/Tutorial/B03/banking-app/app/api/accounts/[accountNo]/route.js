@@ -1,4 +1,8 @@
+import accountRepo from "@/app/repo/account-repo";
+
 export async function GET(req, { params }) {
-    const message = { message: `API endpoint GET http://localhost:3000/api/accounts/${params.accountNo}` };
-    return Response.json(message, { status: 200 });
+    const accountNo = params.accountNo;
+    const account = await accountRepo.getAccount(accountNo);
+    return Response.json(account, { status: 200 });
+
 }

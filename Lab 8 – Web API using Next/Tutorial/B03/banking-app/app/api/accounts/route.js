@@ -3,26 +3,20 @@ export async function GET(req) {
     // type = saving
     const { searchParams } = new URL(req.url);  //http://localhost:3000/api/accounts?type=saving
     const type = searchParams.get('type'); // saving
+
+    // const allQuery = Object.fromEntries(searchParams.entries());
     const accounts = await accountRepo.getAccounts(type);
     return Response.json(accounts, { status: 200 });
 }
 
 // adding a new content [add a new account]
 export async function POST(req) {
-    const message = { message: 'API endpoint POST http://localhost:3000/api' };
-    return Response.json(message, { status: 200 });
+    const account = await req.json();
+    const newAccount = await accountRepo.createAccount(account);
+    return Response.json(newAccount, { status: 201 });
+   
 }
 
-// update an existing content [update the account with accountNo 1123]
-export async function PUT(req) {
-    const message = { message: 'API endpoint PUT http://localhost:3000/api' };
-    return Response.json(message, { status: 200 });
-}
-// delete an existing content [delete the account with accountNo 1123]
-export async function DELETE(req) {
-    const message = { message: 'API endpoint DELETE http://localhost:3000/api' };
-    return Response.json(message, { status: 200 });
-}
 
 
 // const person = {
