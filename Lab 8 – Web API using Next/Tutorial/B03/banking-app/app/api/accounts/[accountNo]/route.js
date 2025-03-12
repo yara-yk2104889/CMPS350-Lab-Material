@@ -6,3 +6,12 @@ export async function GET(req, { params }) {
     return Response.json(account, { status: 200 });
 
 }
+
+export async function PUT(req, { params }) {
+    const accountNo = params.accountNo;
+    const accountUpdates = await req.json();
+
+    const updatedAccount = await accountRepo.updateAccount(accountNo, accountUpdates);
+    return Response.json(updatedAccount, { status: 200 });
+
+}
