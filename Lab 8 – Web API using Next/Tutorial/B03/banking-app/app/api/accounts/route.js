@@ -1,5 +1,12 @@
 export async function GET(req) {
-    const message = { message: 'API endpoint GET http://localhost:3000/api' };
+    // type = saving
+    const { searchParams } = new URL(req.url);  //http://localhost:3000/api/accounts?type=saving
+    // const userQuery = searchParams.get('gender');
+
+    // parsed the form
+    const allUserQuery = Object.fromEntries(searchParams);
+
+    const message = { message: 'API endpoint GET http://localhost:3000/api', allUserQuery: allUserQuery };
     return Response.json(message, { status: 200 });
 }
 
@@ -19,3 +26,15 @@ export async function DELETE(req) {
     const message = { message: 'API endpoint DELETE http://localhost:3000/api' };
     return Response.json(message, { status: 200 });
 }
+
+
+// const person = {
+//     name: 'John',
+//     age: 30,
+//     address: {
+//         city: 'New York',
+//         state: 'NY'
+//     }
+// }
+
+// const {address} = person;
