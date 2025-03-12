@@ -55,7 +55,7 @@ class AccountRepo {
         accounts[index] = { ...accounts[index], ...account };
 
         await this.saveAccounts(accounts);
-        return account[index];
+        return accounts[index];
     }
 
     async deleteAccount(accountNo) {
