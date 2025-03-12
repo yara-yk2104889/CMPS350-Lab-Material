@@ -63,5 +63,11 @@
         "acctType": "Current",
         "balance": 800009999,
         "accountNo": "WZ6lUUyQWq_GeiuLhWJqw"
+    },
+    {
+        "acctType": "Current",
+        "balance": 11991199,
+        "monthlyFee": 150,
+        "accountNo": "_Ro5-AdvFb0SLXdlrbs30"
     }
 ]
