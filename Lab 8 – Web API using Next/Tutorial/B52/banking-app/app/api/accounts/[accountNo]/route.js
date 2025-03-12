@@ -1,11 +1,6 @@
-const accounts = [
-    { accountNo: 1, name: 'John Doe' },
-    { accountNo: 2, name: 'Jane Doe' },
-    { accountNo: 3, name: 'Alice' },
-    { accountNo: 4, name: 'Bob' },
-]
+import accountRepo from "@/app/repo/account-repo"
+
 export async function GET(req, { params }) {
-    const oneAccount = accounts
-        .find(account => account.accountNo == params.accountNo)
-    return Response.json(oneAccount, { status: 200 })
+    const account = await accountRepo.getAccount(params.accountNo)
+    return Response.json(account, { status: 200 })
 }
