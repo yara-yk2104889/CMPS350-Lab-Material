@@ -24,16 +24,19 @@ The goal of this exercise is to develop a Web API using Next.js 13.2 for managin
 
 1. Create a new folder named `lab08-bank-app` and open it in VS Code.
 2. Run the following command to create a Next.js application:
+
    ```sh
    npx create-next-app@latest --experimental-app
    ```
 
    - Answer "No" to all setup questions to keep it simple.
 3. Start the app using:
+
    ```sh
    npm run dev
    ```
 4. Create a new `data` directory under `lab08-bank-app`, and then add the provided `accounts.json` and `trans.json` files.
+
    - These files store account and transaction data.
 
 ### **Project Structure**
@@ -61,10 +64,10 @@ lab08-bank-app/
 
 | **Method** | **URL**                             | **Description**                                                  |
 | ---------------- | ----------------------------------------- | ---------------------------------------------------------------------- |
-| GET              | `/api/accounts/`                        | Returns all accounts. Filters by type if `?type=acctType` is passed. |
-| POST             | `/api/accounts`                         | Adds a new account and returns it.                                     |
-| GET              | `/api/accounts/:accountNo`              | Returns the account by `accountNo`.                                  |
-| PUT              | `/api/accounts/:accountNo`              | Updates the account by `accountNo` and returns it.                   |
+| GET-             | `/api/accounts/`                        | Returns all accounts. Filters by type if `?type=acctType` is passed. |
+| POST-            | `/api/accounts`                         | Adds a new account and returns it.                                     |
+| GET-             | `/api/accounts/:accountNo`              | Returns the account by `accountNo`.                                  |
+| PUT-             | `/api/accounts/:accountNo`              | Updates the account by `accountNo` and returns it.                   |
 | DELETE           | `/api/accounts/:accountNo`              | Deletes the account by `accountNo`.                                  |
 | GET              | `/api/accounts/:accountNo/transactions` | Returns all transactions for the account.                              |
 | POST             | `/api/accounts/:accountNo/transactions` | Adds a transaction and returns the transaction ID.                     |
